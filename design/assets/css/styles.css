@@ -1,0 +1,45 @@
+.fancyNav{
+	/* Affects the UL element */
+	overflow: hidden;
+	display: inline-block;
+}
+
+.fancyNav li{
+	position:relative;
+	
+	float: left;
+	list-style: none;
+}
+.fancyNav li a{
+	color: white;
+	display: inline-block;
+	font: 20px/1 Lobster,Arial,sans-serif;
+	padding: 7px 17px 7px;
+	position: relative;
+	z-index:2;
+	text-decoration:none !important;
+	white-space:nowrap;
+}
+.fancyNav li:hover{
+	background-color:#e16244;
+	border-radius: 15px  15px  15px  15px;
+}
+h1,h2{
+	color: #fff;
+	line-height: 1;
+	background-color: #222;
+	font-family: 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+	font-weight: normal;
+	margin: 0 auto;
+	position: absolute;
+}
+
+h1{
+	font-size: 36px;
+	padding: 5px 15px 10px;
+}
+
+h2{
+	font-size: 14px;
+	padding: 4px 13px 9px 11px;
+}
