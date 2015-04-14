@@ -49,8 +49,21 @@ class ModulesController extends AppController
      *
      * @return void Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add(){
+		$module = $this->Modules->newEntity();
+        if ($this->request->is('post')) {
+            $module = $this->Modules->patchEntity($module, $this->request->data);
+            if ($this->Modules->save($module)) {
+                $this->Flash->success('Le module a été sauvegardé.');
+                return $this->redirect(['controller' => 'Users', 'action' => 'panel']);
+            } else {
+                $this->Flash->error('Le module n\'a pas été inséré.');
+            }
+        }
+		
+        $groups = $this->Modules->Groups->find('list', ['limit' => 200]);
+        $this->set(compact('module', 'groups'));
+        $this->set('_serialize', ['module']);
     }
 
     /**
