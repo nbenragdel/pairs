@@ -32,6 +32,11 @@ class UsersTable extends Table
             'targetForeignKey' => 'group_id',
             'joinTable' => 'groups_users'
         ]);
+		$this->belongsToMany('Modules', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'module_id',
+            'joinTable' => 'modules_users'
+        ]);
     }
 
     /**
